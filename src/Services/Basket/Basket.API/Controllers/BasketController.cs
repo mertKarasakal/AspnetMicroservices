@@ -17,9 +17,11 @@ namespace Basket.API.Controllers {
         private readonly IPublishEndpoint _publishEndpoint;
         private readonly IMapper _mapper;
 
-        public BasketController(IBasketRepository repository, DiscountGrpcService discountGrpcService) {
+        public BasketController(IBasketRepository repository, DiscountGrpcService discountGrpcService, IMapper mapper, IPublishEndpoint publishEndpoint) {
             _repository = repository;
             _discountGrpcService = discountGrpcService;
+            _publishEndpoint = publishEndpoint;
+            _mapper = mapper;
         }
 
         [HttpGet("{userName}", Name = "GetBasket")]
