@@ -1,5 +1,5 @@
 ﻿@page
-@model AspnetRunBasics.OrderModel
+@model OrderModel
 @{
     ViewData["Title"] = "Order";
 }
@@ -34,8 +34,7 @@
                     </thead>
                     <tbody>
 
-                        @foreach (var order in Model.Orders)
-                        {
+                        @foreach (var order in Model.Orders) {
                             <tr>
                                 <td><img src="https://dummyimage.com/50x50/55595c/fff" /></td>
                                 <td>@order.FirstName</td>
